@@ -74,6 +74,17 @@ just a few bug-fixes. Sometimes you end up merging those changes back upstream
 
 
 ## Centralized & Distributed
+Distributed version control: The key to rapid software development. Unlike a centralized version control system, a distributed version control doesn't have a single point of failure, because developers clone repositories on their distributed version control workstations, creating multiple backup copies.
+
+Centralized version control: A relic from the past
+A centralized version control system relies on a central server where developers commit changes. Users like centralized systems, because they’re simple to set up and provide admins with workflow controls. Centralized vcs, like Subversion, CVS, and Perforce, solve the age-old problem of manually storing multiple copies on a hard drive, but the few benefits don’t outweigh what’s at risk from relying on a single server.
+
+If the only copy of a project becomes corrupted or goes down, developers are unable to access the code or retrieve previous versions. Also, remote commits are extremely slow, because users must commit through a network to the central repository, which can slow down systems. Users must also be in network to push changes, limiting where and when developers can commit. Merging and branching are also difficult and confusing, since contributors have to track merges and branch as a single check-in.
+
+Distributed version control: The key to rapid software development
+Unlike a centralized version control system, a distributed version control doesn’t have a single point of failure, because developers clone repositories on their distributed version control workstations, creating multiple backup copies. If the source code is corrupted, teams can use any developer’s clone as a backup, increasing security since there’s little risk of losing a project’s entire history.
+
+Also, because there are local copies, developers can commit offline, which offers flexibility in their personal workflow and prevents having to commit as a giant changeset. Distributed version control, such as Git, Bazaar, and Mercurial, offers fast branching, because there’s no communication with a remote server - everything is done on a local drive.
 
 ## What is Git?
 Git is a distributed version-control system for tracking changes in
