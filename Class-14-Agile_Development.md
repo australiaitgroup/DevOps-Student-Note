@@ -17,8 +17,15 @@
 
 ### Software Development Life Cycle (SDLC)
 
+The software development lifecycle (SDLC) is the cost-effective and time-efficient process that development teams use to design and build high-quality software. The goal of SDLC is to minimize project risks through forward planning so that software meets customer expectations during production and beyond.
+
 
 ### SDLC Model – Waterfall & V Model
+
+Majorly there were three models to choose or to adapt to your process's they are as follows,
+Waterfall model - The waterfall model is a sequential design process, often used in software development processes, in which progress is seen as flowing steadily downwards (like a waterfall) through the phases. 
+
+V model - The V-model represents a software development process which may be considered an extension of the waterfall model. Instead of moving down in a linear way, the process steps are bent upwards after the coding phase, to form the typical V shape.
 
 ## Agile
 
@@ -27,11 +34,14 @@ results.
 
 ## SDLC Model - Agile
 
+Agile model - Agile Modeling is a practice-based methodology for modelling and documentation of software-based systems. It is intended to be a collection of values, principles, and practices for modelling software that can be applied on a software development project in a more flexible manner than traditional Modelling methods
+So, before getting down deeper to choose your model for the development process, you have to be aware of the technical processes involved in the complete lifecycle, that starts from the business analysis, requirements, and continues till providing the baseline information for the disposal process of the entire lifecycle.
+
 ## Agile Values
 
 ## Scrum
 Scrum
-
+Scrum is an agile project management framework that helps teams structure and manage their work through a set of values, principles, and practices.
 
 
 
