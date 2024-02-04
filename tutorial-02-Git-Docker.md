@@ -9,6 +9,8 @@ Lecturer: William Wang
 - [TOPIC 4.VSCODE plugin](#topic-4vscode-plugin)
 - [TOPIC 5.Git](#topic-5git)
 - [TOPIC 6.Troubleshooting](#topic-6troubleshooting)
+- [TOPIC 7.前后端]
+- [TOPIC 8.DNS]
 
 
 
@@ -576,3 +578,37 @@ netstat -ano | findstr :5000
 ```
 
 This will give you the PID (process ID) of the application that's using the port. If the application is not needed, you can kill it using `kill <PID>` on Linux/Mac or `taskkill /PID <PID>` on Windows. Then try running `docker compose up` again.
+
+# TOPIC 7 前后端
+
+前端和后端后面是个“端”字，端一般指的某一个部分。顾名思义，我们可以认为前端和后端是代码上的区别。 前端：对应项目里面写的html 、javascript 、css等标记语言，用于显示网页。
+
+后端：对应业务逻辑代码、数据库交互等。比如java语言等。
+
+# TOPIC 8 DNS
+
+稍微了解过DNS工作原理的应该都听说过DNS查询的时候是可能要多次递归查询的，以www.gnu.org这个域名为例，正则的查询是先到根目录服务器上查找到org域名服务器的地址，然后到org域名服务器上查找到gnu.org域名服务器，然后再到gnu.org的域名服务器上查找www.gnu.org这个机器的IP地址。但是这里的描述忽略了一些重要的细节，这个递归查询/迭代到底是谁来查询的，是在客户端gethostbyname函数完成，还是由DNS server完成？如果是在域名服务器中完成，那么到底是在哪个域名服务器完成？同样是域名服务器，为什么有的只提供域名服务器的间接地址，而有的却不厌其烦的刨根问底，直到找到最终的目的IP地址？如果有gethostbyname在客户端完成，客户端抓包是不是可以看到很多往返来往的报文。
+
+https://linux.cn/article-12509-1.html
+
+DNS
+
+1.Domin->IP
+2.Local host
+3.GW
+4.Root
+5.TOP
+6.Auth
+
+查询Google时，只有一条A记录，其实还有CNAME记录。CNAME(规范名称canonical name)就像一个别名，把一个域名指向另一个域名。你查询的大多数域名不会有CNAME记录，而只有A记录。如果你运行dig localhost命令，你会看到一个A记录，它就指向127.0.0.1。A记录用于将一个名字映射到一个IP地址。
+DNS记录类型包括：
+
+A或AAAA：IPv4或IPv6地址
+CNAME：别名
+MX：邮件交换器
+NS：名称服务器
+PTR：一个反向条目，让你根据IP地址找到系统名称
+SOA：表示授权记录开始
+TXT 一些相关文本
+我们还可以在上述输出的第五行看到一系列的flags。RFC1035中定义了DNS报文头中包含的标志，甚至显示了报文头的格式。
+
