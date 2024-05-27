@@ -130,10 +130,11 @@ If there is a spamming user sends a significant amount of request or use DDoS to
 - DDoS Attack
   - 黑客可以控制大量全球不同的服务器，来同时访问你的网站，超过网站的负载量，来阻断其它/真实用户的访问
   - 比如匠人网站 假如 平时负载是 最高支持每秒500个访问， 比如全世界3个server 每个server 每秒发200个访问 共600个， 匠人网站就超负荷，不能给正常的真实用户提供服务。
- 
+
+ 如今 jiangren.com 最近终于对网站完成了升级并使用了CDN加速。
  
 
-### 解决方案
+### Single Point Failure的解决方案
 #### Content Delivery Network (CDN)
 帮助你把文件储存在全球不同的地区，在不同大陆设置不同的edge server，以便于用户访问时，直接到达该地区的edge server，拿到网站的缓存，以达到快速访问
 - Akamai: CDN的一个品牌，帮你设置多个edge server
@@ -188,6 +189,9 @@ to update.
 - 在没有找到相对应的ip后，会继续访问ISP（e.g. Telstra, Optus）, 找到对应ip
 - 如果没还有找到，可能会去询问更高层的domain name server，例如root/TLD/authoritative name server
   - TLD name server，包含了所有的以.com或者.net结尾的网站对应ip信息
+- 逐级查询，逐级解析
+- Local name server在得到结果后会把结果返回你使用的机器，并将该地址缓存一段时间，缓存期间其他用户再访问本域名的时候不用再次查询，可直接获得结果。
+  
 - If you search “Domain name registration”, you will find a lot of providers. My favourite ones are:
   - godaddy.com
   - onlydomains.com 
@@ -204,13 +208,15 @@ to update.
 - 名词： NAME SERVER
 - 域名逐级解析图和案例需要理解其流程
 
+- 经典面试题：当你在图书馆使用机器在浏览器中输入robot.cs.washington.edu后，背后发生了什么事情？
+
 
 ##### DNS: AWS Route53(Handson #2)
 ![jiangren dns](image/c0202.png)
 并不会直接使用jiangren.com.au，而是使用了一个subdomain  
 想进入route 53，可以在AWS console页面，search栏搜索route 53
 - Setup: https://github.com/JiangRenDevOps/DevOpsLectureNotesV4/blob/main/WK1-CDN-DNS/DNS.md
-- 对应课程视频2:03:20 ~ 2:26:00
+- 对应课程视频2:04:40 ~ 2:26:00
 - (AWS) CNAME:将现有record的名字，map到另一个域名（例如cloudfront里产生的新域名）或者subdomain
 - 有方法将cloudfront.net从客户端禁用：https://stackoverflow.com/questions/45589416/how-to-disable-access-to-cloudfront-via-the-cloudfront-net-url
 - 子域名必须要与主域名有关系（例如已经保存在了aws hosted zone里），才能使我们的网站得到最终的访问。因为一般在访问子域名时，会向上追溯到主域名，在主域名dns处询问是否有相应的子域名，如果得到了否定回答，则子域名依然无法访问
