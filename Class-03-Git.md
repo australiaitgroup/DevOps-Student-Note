@@ -1,4 +1,4 @@
-# Class-06 Git
+# Class-03 Git
 ## 主要知识点
 - [Git Basics with Practices](#git-basics-with-practices)
   * [DevOps为什么要使用Git？](#devops------git-)
