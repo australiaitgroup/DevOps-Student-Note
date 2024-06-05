@@ -7,10 +7,6 @@
   * [Version Control Glossary](#version-control-glossary)
   * [Centralized & Distributed](#centralized---distributed)
   * [What is Git?](#what-is-git-)
-  * [Git workflow](#git-workflow)
-  * [Git branch](#git-branch)
-  * [Git and GitHub](#git-and-github)
-  * [GitHub PR(pull request)](#github-pr-pull-request-)
 - [Step 0: 一个点的历史 – Git Setup](#step-0-----------git-setup)
   * [Git Global Setup](#git-global-setup)
   * [Git local – hands on](#git-local---hands-on)
@@ -30,8 +26,6 @@
   * [Merge conflicts](#merge-conflicts)
   * [两种workflow: merge 和 rebase (无区别)](#--workflow--merge---rebase------)
   * [graph ---use git history plugin in VSCode ----you can get better visualazaiton](#graph----use-git-history-plugin-in-vscode-----you-can-get-better-visualazaiton)
-  * [useful visualazaiton link:  <http://git-school.github.io/visualizing-git/>](#useful-visualazaiton-link----http---git-schoolgithubio-visualizing-git--)
-  * [https://git-school.github.io/visualizing-git/#free](#https---git-schoolgithubio-visualizing-git--free)
 - [Step 3: 多条线的历史 – 远程协作](#step-3---------------)
   * [Connect to remote repo](#connect-to-remote-repo)
   * [Set up tracking branch](#set-up-tracking-branch)
@@ -117,15 +111,6 @@ It is designed for coordinating work among programmers, but it
 can be used to track changes in any set of files. Its goals include
 speed, data integrity, and support for distributed, non-linear
 workflows
-
-## Git workflow
-
-## Git branch
-
-## Git and GitHub
-
-## GitHub PR(pull request)
-
 
 # Step 0: 一个点的历史 – Git Setup
 Git 是CLI 工具，用命令确认Git是否已经安装，打开任意一个command line工具输入git --version
@@ -323,8 +308,8 @@ Merging vs. Rebasing
 Rebase a branch (git rebase)
 
 ## graph ---use git history plugin in VSCode ----you can get better visualazaiton 
-## useful visualazaiton link:  <http://git-school.github.io/visualizing-git/>
-## https://git-school.github.io/visualizing-git/#free
+   useful visualazaiton link:  <http://git-school.github.io/visualizing-git/>
+   https://git-school.github.io/visualizing-git/#free
 
 
 # Step 3: 多条线的历史 – 远程协作
