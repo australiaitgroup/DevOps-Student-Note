@@ -1,5 +1,36 @@
 # Class-04-Development workflow-Agile Methodology
-
+- [Agenda](#agenda)
+- [Waterfall ---> Agile](#waterfall------agile)
+  * [Software Development Life Cycle (SDLC)](#software-development-life-cycle--sdlc-)
+  * [SDLC Model – Waterfall & V Model](#sdlc-model---waterfall---v-model)
+  * [Waterfal](#waterfal)
+  * [Agile](#agile)
+    + [SDLC Model - Agile](#sdlc-model---agile)
+    + [Agile (Modern) vs Waterfall (Traditional)](#agile--modern--vs-waterfall--traditional-)
+    + [Agile Values](#agile-values)
+    + [12 Agile Principles Behind The Agile Manifesto](#12-agile-principles-behind-the-agile-manifesto)
+    + [Why Agile & Agile Principal](#why-agile---agile-principal)
+    + [Agile mindset](#agile-mindset)
+  * [面试常见问题](#------)
+- [Agile framework and practice](#agile-framework-and-practice)
+  * [Scrum](#scrum)
+    + [Scrum 3355](#scrum-3355)
+    + [Scrum Master](#scrum-master)
+    + [Product Backlog](#product-backlog)
+    + [User Story](#user-story)
+    + [Task Estimation](#task-estimation)
+    + [Scrum Meeting](#scrum-meeting)
+  * [Kanban](#kanban)
+  * [Other Agile Ceremonies](#other-agile-ceremonies)
+  * [常见工具](#----)
+  * [GoodBest Development Practices](#goodbest-development-practices)
+  * [Scenario Microsoft - Win10](#scenario-microsoft---win10)
+    + [WasS](#wass)
+    + [Teams](#teams)
+  * [Self Forming Teams](#self-forming-teams)
+  * [Spring Mail](#spring-mail)
+ 
+ 
 # Agenda
 • Agile Methodology & Agile Mindset
 • Agile Principle & Values, Agile Frameworks, Agile in Practise
@@ -237,7 +268,7 @@ Long planning ---> continual planning & learninng
 
 
 
-### Reference Reading
+Reference Reading
 
 What is Agile?
 https://docs.microsoft.com/en-us/azure/devops/learn/agile/what-is-agile
@@ -251,6 +282,8 @@ How to choose a right agile process?
 https://docs.microsoft.com/en-us/azure/devops/boards/work-items/guidance/chooseprocess?view=azure-devops&tabs=basic-process
 Plan and track your work
 https://docs.microsoft.com/en-us/azure/devops/boards/get-started/plan-track-work?view=azuredevops&tabs=agile-process
+
+
 Agile and Scrum Questions
 1. What is Agile? What’s the difference with Waterfall?
 2. What are the three roles on the scrum team?
@@ -258,17 +291,19 @@ Agile and Scrum Questions
 4. What is retrospective meeting? What’s the expected outcome of it?
 5. How to write a quality product backlog item?
 6. When might a sprint be cancelled?
-A. When the Development Team feels that the work is too hard.
-B. When the sales department has an important new opportunity.
-C. When the Sprint Goal becomes obsolete.
-D. When it becomes clear that not everything will be finished by the end of the Sprint.
+ A. When the Development Team feels that the work is too hard.
+ B. When the sales department has an important new opportunity.
+ C. When the Sprint Goal becomes obsolete.
+ D. When it becomes clear that not everything will be finished by the end of the Sprint.
 7. Which statement best describes a Product Owner's responsibility?
-E. Managing the project and ensuring that the work meets the commitments to the
+ E. Managing the project and ensuring that the work meets the commitments to the
 stakeholders.
-F. Keeping stakeholders at bay.
-G. Manage the product backlog. Set product priority and optimizing the value of the work
+ F. Keeping stakeholders at bay.
+ G. Manage the product backlog. Set product priority and optimizing the value of the work
 the Development Team does.
-H. Directing the Development Team.
+ H. Directing the Development Team.
+
+
 Azure DevOps Lab Practice
 1. Open https://dev.azure.com
 1. Login with your Microsoft Account or create a new account and login
