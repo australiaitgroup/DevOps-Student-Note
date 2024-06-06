@@ -76,13 +76,12 @@ So, before getting down deeper to choose your model for the development process,
  最小化Risk
 
 ### Agile (Modern) vs Waterfall (Traditional)
+
 过去的员工职责非常清晰，项目中不同组别轮流进场，成员之间需要大量的Handover
 注重流程，详细的工作文档
 50% of knowledge gets lost in handoffs
 
 敏捷开发要求不同的成员担任多个角色，比如需要devops做testing的工作，也需要团队成员有更广的知识面和更多的技能。
-
-
 
 ### Agile Values
 
@@ -132,7 +131,6 @@ Team autonomy instead of command & control
  4. Could there be anything done differently in order to turn it into success?
 
 # Agile framework and practice
-
 ## Scrum
 
 Scrum is an agile project management framework within which people can address complex problems, while productively and creatively delivering products of the highest possible value.
@@ -161,17 +159,15 @@ Sprint Retrospective meeting 成员回顾，做的好的&不好的
 • 5 Events: Sprint(产品列表精化), Sprint Planning, Daily Scrum(daily stand up meeting), Sprint Review, Sprint Retrospective
 • Value propositions: Commitment, Focus, Openness, Respect, Courage
 
-
-
 ### Scrum Master
-Leader role
-成员保护，不会收到团队外的challenge
-QA Check
-Team Building
-根据需求招人
-Run meeting
 
-不是manager，而是帮助role
+- Leader role
+- 成员保护，不会收到团队外的challenge
+- QA Check
+- Team Building
+- 根据需求招人
+- Run meeting
+- 不是manager，而是帮助role
 
 ### Product Backlog
 A wish list
