@@ -112,37 +112,43 @@ Container是集装箱概念，标准化， 一般会在Container中放没有状�
 It is a command line interface client for interacting with the Docker daemon. It greatly simplifies how you manage container instances and is one of the key reasons why developers love using Docker.
 
 - Run a docker container from nginx demo image
-	'''
+	```
 	docker run -d -p 80:80 --name demo nginxdemos/hello
-	'''
-		-d 当前容器是否运行在后台
-		-p 端口映射
-		--name 容器命名（不起名字可以用容器id操作）
+	```
+	-d 当前容器是否运行在后台
+	-p 端口映射
+	--name 容器命名（不起名字可以用容器id操作）
+  
 - List docker containers
-	'''
+  	```
 	docker ps
-	'''
+  	```
+   
 - List docker images
-	'''
+ 	```
 	docker images
-	'''
+ 	```
+  
 - View logs in the container
-	'''
+ 	```
 	docker logs -f demo
-	'''
-		-f follow当前容器的log记录
+ 	```
+  	-f follow当前容器的log记录
+  
 - Inspect the container
-	'''
+ 	```
 	docker inspect demo
-	'''
-	也可以用UI查看容器的inspect，即容器各种细节参数
+ 	```
+也可以用UI查看容器的inspect，即容器各种细节参数
+
 - Copy a file to the container
-	'''
+ 	```
 	docker cp your_file demo:/
-	'''
-	容器内的文件与原系统中的文件是隔离的，该命令用于拷贝原系统中的文件到容器内。
+ 	```
+容器内的文件与原系统中的文件是隔离的，该命令用于拷贝原系统中的文件到容器内。
+
 - Enter the container and execute command inside the container
-	'''
+ 	```
 	docker exec -it demo sh
 	
 	ls
@@ -153,165 +159,129 @@ It is a command line interface client for interacting with the Docker daemon. It
 	ls
 	cat nginx.conf
 	exit
-	'''
+ 	```
 	该命令用于登录到已经启用的容器内
-		-sh 可以是任何容器内可以执行的命令
-		-it 容器的输入输出和电脑的输入输出连起来，需要terminal时要加上-it，share输入输出
+	-sh 可以是任何容器内可以执行的命令
+	-it 容器的输入输出和电脑的输入输出连起来，需要terminal时要加上-it，share输入输出
 	exit or control+D 退出
+
 - Stop the container (or kill the container)
-	'''
+ 	```
 	docker stop demo
 	or
 
 	docker kill demo
-	'''
-		stop的容器其实还在，而且它占用着容器名，ps查看在运行的容器， ps -a 查看所有的容器
-		image是模版
+ 	```
+	image是模版
+
 - View hidden container which you cannot view via docker ps
-	'''
+ 	```
 	docker ps -a
-	'''
-	
-		
-	
-	
-	
-	
-
-## 2.1 第一部分 巩固Devops的概念
-   What (Devops 是什么)
-   先 High level做个介绍
-
-   WHY (为什么)
-   举例：
-	A business owner runs a website in cloud.   before  hire only one developer-刚刚开始，网站只有简单的feature 
-后续需要加的feature越来越多，hire 10 developer，当这么多个Dev同时做网站的开发， 都同时做REALESE的时候，就会有CONFLICTS,如何更快更好的把FEATURE交付给客户。这个流程就是Devops做的。
-
-火车理论：
-	打比方每个火车就是同一个起点出发， DEVOPS 相当于一个 COORDINATOR，哪辆火车先出发，哪辆后出发 ， 
-如果FEATURE的DELIVERY有BUG 可以让火车回到原点，让加速我们FEATURE的DELOPYMENT,  DEVOPS设计好铁轨，MONITOR好铁轨。如何加速FEATURE的流程，造铁轨
-
-Devops解决的问题：如何加速FEATURE的DELO,如何让用户能够更快更好的最新DEV的FEATURE
-
-![Alt text](image/devops.png?raw=true)
-
-这个循环中：
-PLAN& CODE ----developer经常做的，DEVOPS需要了解知道，会做些CONFIGUREATION CHANGE 和开发
-BUILD/RELEASE/DEPLOY/----主要DEVOPS engineer 做的 
-OPERATE/TEST/MONITOR------SRE做的有些重合,test大家都会做一点
-DEVOPS CYCLE 是一个CULTURE,  每天定时好几次部署， 自动化的流程做保障，需要系统的方案来做，帮助DEVLOPER做的东西交付给用户。
-
-如何帮助公司提高效率，帮助DEV把产品更快更好的提交给用户
-
-
-SRE的工作：产品交付给用户之后，用户会在软件上面访问测试等，会造成服务器的压力，来监控产品交付给用户后，他们运行的状态，来保证用户使用的工作正常。
-
-SRE的工作 ：
-小团队服务百万级用户使用云产品
-服务器（电脑） ----它的CPU,DISK ,MEMORY是有物理极限的,不预测对方是如何使用， 很容易导致我们的系统崩溃
-
-在以上这个循环中，需要掌握每个知识点。
-
-展开细节：
-Devops_Overview.drawio 流程图
- - 主要有3个DEV/STAGING/PRODUCTION
- - 其中 DEV/STAGING 主要做测试用的
- - 后面有MONITOR监控系统
- - CI/CD Pipeline
- - Devops的Practice 贯穿各个开发进程
-
-
-
-
-### 2.2 第二部分： Docker
-#### 2.2.1 Docker introduction
-
-![Alt text](image/Container_VM_Implementation.png?raw=true)
-
-
-container 系统-----程序员只需要专心写程序就好，不管底层的系统。更好的利用资源，轻量级。
-
-
-
-## What is Docker?
-* Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in
-packages called containers.
+ 	```
+  	stop的容器其实还在，而且它占用着容器名，ps查看在运行的容器， ps -a 查看所有的容器
   
-* Containers are isolated from one another and bundle their own software, libraries and configuration files;
+- Remove the container
+	```
+ 	docker rm demo
+ 	```
+ 也可以将容器跑在前台（不加-d）
+ 	```
+  	docker run -it --rm -p 80:80 --name demo nginxdemos/hello
+   	```
+    	-d 没有-d意味着当前terminal窗口用于监视该容器，（该terminal不可以干其他的事情）
+	-it share容器的输入输出
+ 	--rm 容器停掉的时候，该容器将被自动删除，直接释放容器名字
+  
+- Run the same container on a different port
+	```
+ 	docker run -p 8080:80 --name demo8080 nginxdemos/hello
+ 	```
+	notice this time we run it without -d, what is the difference?
 
-* Large web deployments like Google and Twitter, and platform providers such as Heroku run on container technology, 
-  at a scale of hundreds of thousands or even millions of containers.
-## Why Docker?
-Docker enables developers to easily pack, ship, and run any application as a lightweight, portable, self-sufficient 
-container, which is easily distributable and can run virtually anywhere.
+	Try visit http://127.0.0.1 and http://127.0.0.1:8080
 
-
-Docker has been designed in a way that it can be incorporated into most DevOps applications, including Puppet, Chef, 
-Vagrant, Ansible and many more, or it can be used on its own to manage development environments.
-
-
-
-### Key Benefits
-
-* Portable deployment across machines.
-  * If you sent me a copy of your application installed in a custom LXC configuration, the app will be tied to your 
-    machine’s specific configuration: networking, storage, logging, etc. 
-  * Instead, Docker defines an abstraction for these machine-specific settings.
-
-* Application-centric. 
-  * Docker is optimized for the deployment of applications, as opposed to machines. This is reflected in its API, 
-    user interface, design philosophy and documentation.
-
-* Automatic build. 
-  * Docker includes a tool for developers to automatically assemble a container from their source code, with full 
-    control over application dependencies, build tools, packaging etc. They are free to use make, maven, chef, puppet, 
-    salt, Debian packages, RPMs, source tarballs, or any combination of the above, regardless of the configuration of
-    the machines.
-
-* Versioning. 
-  * Docker includes git-like capabilities for tracking successive versions of a container, inspecting the 
-  diff between versions, committing new versions, rolling back etc.
-
-* Component re-use
-  * Any container can be used as a parent image to create more specialized components.
-    
-* Sharing.
-  * Docker has access to a public registry on Docker Hub where thousands of people have uploaded useful images: 
-    anything from Redis, CouchDB, PostgreSQL to IRC bouncers to Rails app servers to Hadoop to base images for various
-    Linux distros. The registry also includes an official “standard library” of useful containers maintained by the 
-    Docker team. The registry itself is open-source, so anyone can deploy their own registry to store and transfer 
-    private containers, for internal server deployments for example.
-* Tool Ecosystem
-  * Great Integration Capabilities with pretty much everything that you can think of.
-    
-Ref: https://docs.docker.com/engine/faq/#what-does-docker-technology-add-to-just-plain-lxc
-
-
-Why Docker?
-	key words:  easily pack, ship, and run any application as a lightweight/isolated container which is easily distributable and can run virtually anywhere.
- 
-如图1：Docker 的使用会贯穿整个CI/CD的过程
+	about published ports: https://docs.docker.com/network/#published-ports
+	-p 是容器的端口映射设置，-p 8080:80 意味着本机上的8080端口映射到容器的80端口上
+- Let's change some file
+ 	```
+	docker exec -it demo8080 sh
 	
-![Alt text](image/inner-outer-loop.png?raw=true)
+	echo '<h1>hello jiangren</h1>' > /usr/share/nginx/html/index.html
+  	```
+	更改了容器内index.html文件的内容
+  	更改的内容将跟随该容器存在，如果容器删除，更改的内容也将删除，如果只是停止后再启动该容器，更改的内容还将存在。
+  	如果想让保存更改的内容需要添加volume
+- Container with a volume
+  container内部的文件是一个临时的文件存储系统，如果想持久存储内容，需要创建一个volume,然后挂载在容器上
+  ```
+  docker volume create my-vol
+  docker volume ls
+  docker volume inspect my-vol
+  docker run -it -p 8080:80 -v my-vol:usr/share/nginx/html -- demo8080 nginxdemos/hello
+  ```
+  空卷（Volume）第一次挂载时：当一个新的（空的）卷第一次挂载到容器时，如果容器内挂载点目录中已经存在文件，这些文件会被复制到卷中。因此，卷最初会包含容器内挂载点目录中的所有文件和子目录。
+  非空卷挂载时：当一个已经包含数据的卷挂载到容器时，卷中的数据将会覆盖容器内挂载点目录中的任何现有数据。
 
---image repo 的作用 
+### docker image
+创建一个自己的image
+用dockerfile写自己的image
 
-举例：GOOGLE 数据中心， 一个REGION 几千上万的CONTAINER 如果有一个模板复制，就能方便部署时间更快，REQUEST 数量增多了， 可以很快增加CONTAINER的数量，部署之后MONITOR
+#### console-helloworld
 
-#### 2.2.2 Docker CLI 手动练习handson来学习命令
--每个实验部分分别练习和需要掌握熟悉不同的Docker 命令：
+详细参考链接:<https://github.com/JiangRenDevOps/DevOpsNotes/tree/master/WK3_Dockerisation/dockerfile/1.console-helloworld>
 
-##### Handson #1 ：understand Docker image and container
-	首先是确保Docker打开，我用的是Linux 直接在TERMIMAL上设置
-        （需要能熟练使用linux命令如： ls/cd/copy等， 还需要注意路径）
-	第一个掌握command: build
-	第二个掌握command: run （可以加 rm）---测试网站是否能在本地使用
-	第三个掌握command: stop
-	需要注意：container名字叫 webapp_1
-	dockerfile: 需要会读和写，理解
-	可以在docker hub上找相关信息: 比如查alpine
+简单快速的方法，可以说是一键直接运行，看以下代码（会按照dockerfile里面的代码按照顺序执行）：
+```
+./run.sh
+```
 
-Docker file 例子：
+-实际的分步操作步骤：
+1. 先Build这个image
+Build a image named `jr/console-helloworld`.
+```
+cd 1.console-helloworld
+
+docker build -t jr/console-helloworld .
+
+docker images
+```
+
+2.再run这个image
+```
+docker run --rm jr/console-helloworld
+```
+Note: Use `--rm` option to remove container automatically.
+
+以下是Dockerfile文件里的代码：
+```
+FROM ubuntu
+
+ENTRYPOINT ["/bin/bash"]
+CMD ["-c", "echo Hello world from command line."] 
+```
+所有的image都需要一个基础的镜像，此镜像的基础镜像 from ubuntu
+不装任何东西，不改任何内容，只告诉此docker启动的时候做什么事情。
+ENTRYPOINT 和 CMD 的命令都需要写成【】（list），
+实际的效果是将这两个命令连起来
+命令运行完就结束了
+分成两部分是因为CMD部分可以在运行的时候重载。
+
+以下是run.sh文件里的代码：
+```
+#!/bin/bash
+set -e
+
+cd "$(dirname "$0")"
+
+echo "Building image ..."
+docker build -t jr/console-helloworld .
+
+echo
+echo "Running container ..."
+docker run --rm jr/console-helloworld
+```
+
+#### Docker file 例子：
 ```
 FROM python:3
 
@@ -337,85 +307,16 @@ CMD ["python", "./src/app.py"]
    https: default port 443
    you can use ports after 1024 like port 5000 or  port 5001
 
-
-最基本最简单的访问网站的过程（Docker---->Linux系统（PYTHON,运行app.py文件， 80端口映射5000端口)
-```
-docker run -p 80:5000 --name webapp_1 myimage:1.0
-```
-or
-```
-docker run -d --rm -p 80:5000 --name webapp_1 myimage:1.0
-```
-
-通过命令进入我们的Docker里面验证或者看里面是否在运行我们的程序：
-
-```
-docker exec -it webapp_1 /bin/bash
-```
-
-
-#### 2.2.3 Docker file 手动练习handson来学习命令
--4 practices for docker file:
-
-
-#1. console-helloworld
-
-详细参考链接:<https://github.com/JiangRenDevOps/DevOpsNotes/tree/master/WK3_Dockerisation/dockerfile/1.console-helloworld>
-
-简单快速的方法，可以说是一键直接运行，看以下代码（会按照dockerfile里面的代码按照顺序执行）：
-```
-./run.sh
-```
--实际的分步操作步骤：
-1. 先Build这个image
-Build a image named `jr/console-helloworld`.
-```
-cd 1.console-helloworld
-
-docker build -t jr/console-helloworld .
-
-docker images
-```
-
-2.再run这个image
-
-```
-docker run --rm jr/console-helloworld
-```
-Note: Use `--rm` option to remove container automatically.
-
-以下是Dockerfile文件里的代码：
-```
-FROM ubuntu
-
-ENTRYPOINT ["/bin/bash"]
-CMD ["-c", "echo Hello world from command line."] 
-```
-以下是run.sh文件里的代码：
-```
-#!/bin/bash
-set -e
-
-cd "$(dirname "$0")"
-
-echo "Building image ..."
-docker build -t jr/console-helloworld .
-
-echo
-echo "Running container ..."
-docker run --rm jr/console-helloworld
-```
-
-#2. web-nginx
+#### web-nginx
 
 详细参考链接:<https://github.com/JiangRenDevOps/DevOpsNotes/tree/master/WK3_Dockerisation/dockerfile/2.web-nginx>
 
 同以上实验#1相同2种方法： 1. 直接一键运行 ./run.sh  2. 先build再run
 这个实验需要注意的点：
 
-###在build的步骤里面：
+在build的步骤里面：
 -t代表是 tag的意思，一个规范的模式是这样写：
-	jr/web-nginx 这个 第一部分jr是你的用户名，第二部分web-nginx才是你的image真正的名字，可以在后面加:1.0 或 2.0等版本号
+	jr/web-nginx  第一部分jr是你的用户名，第二部分web-nginx才是你的image真正的名字，可以在后面加:1.0 或 2.0等版本号
 
 Build a image named `jr/web-nginx`.
 ```
@@ -426,10 +327,17 @@ docker build -t jr/web-helloworld .
 docker images
 ```
 
-还有就是当我们在浏览器里面hit htmL文件时候，不用写端口号，用默认的89端口----> nginx 可以去查，它的默认端口是 80端口（可以去docker hub查看 nginx的文件，EXPOSE 80  代表预设值是 80端口）
+当我们在浏览器里面hit htmL文件时候，不用写端口号，用默认的80端口----> nginx 可以去查，它的默认端口是 80端口（可以去docker hub查看 nginx的文件，EXPOSE 80  代表预设值是 80端口）
 
+Dockerfile
+```
+FROM nginx
 
-#3. web-python-flask
+COPY ./index.html /usr/share/nginx/html
+```
+将自己写的index.html文件放入到nginx中，像一个实际开发的流程，开发的产品index.html放打成镜像，之后用该镜像安装的容器都带有该index.html文件
+
+#### 3.web-python-flask
 
 详细参考链接:<https://github.com/JiangRenDevOps/DevOpsNotes/tree/master/WK3_Dockerisation/dockerfile/3.web-python-flask>
 
@@ -444,9 +352,19 @@ RUN pip install requests
 
 COPY ./app /app
 ```
+```
+cd 3.web-puthon-flask
+
+docker build -t jr/web-flask .
+docker images
+```
+用‘.‘表示当前路径
+
 -运行完之后
-In the browser, open http://localhost/?city=jin and you will get a list of cities that has "jin" in their name
+In the browser, open http://localhost/?name=Tom and you will get a “Hello + <name> 
 以上这个 ?city=jin 的部分 叫  query string，可以用于查询
+
+此镜像拷贝了整个目录，起这个flask，代码拷贝，还要确保requests库存在，因此要‘run pip install requests',Run指令是最常见的。
 
 第三个实验得出的小总结：比起之前2个实验，越来越方便，越来越简单，因为把该用的软件都整合到一个 image里面，可见，run一个小的网站无非3步：
  1.找到好用的image (可以去docker hub找)
@@ -477,6 +395,15 @@ ENTRYPOINT ["/bin/bash"]
 
 CMD ["main.sh"] 
 ```
+
+Build
+```
+cd 4.console-dependency
+
+docker build -t jr/console-hello .
+docker images
+```
+
 --->通过分析main.py -如下，运行了一个bash script(第6第7周会学到),常用！ 在linux系统里面想自动化一些东西会用到
 echo---> 就是打印的意思类似 print
 循环2次：
@@ -501,10 +428,24 @@ for i in $(seq 2); do
     done
 done
 ```
+Run
+```
+docker run --link webflask --rm jr/console-hello
+```
+Use --link option to link a another container.
+Use --rm option to remove container automatically.
+
 2个container 进行通信， link 查文档:
 链接：<https://docs.docker.com/network/links/>
  Legacy container links
  The --link flag is a legacy feature of Docker. It may eventually be removed. Unless you absolutely need to continue using it, we recommend that you use user-defined networks to facilitate communication between two containers instead of using --link. One feature that user-defined networks do not support that you can do with --link is sharing environment variables between containers. However, you can use other mechanisms such as volumes to share environment variables between containers in a more controlled way.
+
+ 
+#### Cleanup
+Just simply kill all the containers simply.
+```
+docker kill $(docker ps -q)
+```
 
 总结 docker file 的命令，Common Dockerfile Commands：
 FROM
@@ -516,9 +457,14 @@ EXPOSE
 ENTRYPOINT
 以上命令和详细信息，还有一些小练习可以参考链接:<https://github.com/JiangRenDevOps/DevOpsNotes/blob/master/WK3_Dockerisation/0.docker-intro.md>
 
-#### 2.2.4 Docker-compose 手动练习handson来学习命令
--会了docker file 之后，我们来到了docker-compose
+
+
+### Docker-compose 
+-学习dockerfile 之后，可以使用docker-compose同时启动多个container
 参考链接：<https://github.com/JiangRenDevOps/DevOpsNotes/tree/master/WK3_Dockerisation/docker-compose>
+
+
+
 
 要学会看以下的yml文件:
 ```
@@ -562,12 +508,13 @@ configure your application’s services. Then, with a single command, you create
 
 If you finished today's exercises try: https://docs.docker.com/compose/gettingstarted/
 
-### docker-registry.md
+### docker-registry
+dockerhub的帐号上可以push自己的image
 
 链接:<https://github.com/JiangRenDevOps/DevOpsNotes/blob/master/WK3_Dockerisation/4.docker-registry.md>
 
 
-Share
+### Share
 Pull an image from a registry
 
 docker pull myimage:1.0
