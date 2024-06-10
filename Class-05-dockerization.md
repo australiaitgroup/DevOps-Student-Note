@@ -1,9 +1,10 @@
-
+# Class-05-dockerization
 
 
 # 老师介绍
 Liji Yu 老师-- 浙江大学计算机专业硕士。 十多年互联网从业经验。
 Senior Infrastructure Engineer - Canva
+
 # 1.Contents
 - Docker basics
 - Docker CLI
@@ -53,7 +54,7 @@ Resource utilization
 Docker enables developers to easily pack, ship, and run any application as a lightweight, portable, self-sufficient container, which is easily distributable and can run virtually anywhere.
 
 Docker has been designed in a way that it can be incorporated into most DevOps applications, including Puppet, Chef, Vagrant, Ansible and many more, or it can be used on its own to manage development environments.
-#### Container vs Virtual Machine
+### Container vs Virtual Machine
 两者都是把一台物理机器隔离成多台虚拟的机器
 区别是实现的方式和实现的层级，虚拟机在更低的层级（虚拟物理硬件），在虚拟硬件上装操作系统，虚拟需要装OS，运行OS要浪费资源；container在操作系统上隔离出的不同的环境，坏处容器上是不能装其他的操作系统，Docker一般只支持Linux系统，好处是相当快，秒起Linux环境。多跑好几个并且占用的资源更少。
 
