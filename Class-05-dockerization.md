@@ -317,8 +317,9 @@ CMD ["python", "./src/app.py"]
 在build的步骤里面：
 -t代表是 tag的意思，一个规范的模式是这样写：
 	jr/web-nginx  第一部分jr是你的用户名，第二部分web-nginx才是你的image真正的名字，可以在后面加:1.0 或 2.0等版本号
+版本号可根据需要添加，如果不添加默认是latest
 
-Build a image named `jr/web-nginx`.
+Build an image named `jr/web-nginx`.
 ```
 cd 2.web-nginx
 
@@ -371,7 +372,7 @@ In the browser, open http://localhost/?name=Tom and you will get a “Hello + <n
  2.把它的 dependancy安装好
  3.程序运行起来
 
-#4. console-dependency
+### console-dependency
 
 详细参考链接:<https://github.com/JiangRenDevOps/DevOpsNotes/tree/master/WK3_Dockerisation/dockerfile/4.console-dependency>
 
@@ -408,7 +409,6 @@ docker images
 echo---> 就是打印的意思类似 print
 循环2次：
 for循环嵌套  里面的for key 有 （sy au ing ba lu pa ji san）
-
 
 ```
 #!/bin/bash
@@ -457,13 +457,9 @@ EXPOSE
 ENTRYPOINT
 以上命令和详细信息，还有一些小练习可以参考链接:<https://github.com/JiangRenDevOps/DevOpsNotes/blob/master/WK3_Dockerisation/0.docker-intro.md>
 
-
-
 ### Docker-compose 
 -学习dockerfile 之后，可以使用docker-compose同时启动多个container
 参考链接：<https://github.com/JiangRenDevOps/DevOpsNotes/tree/master/WK3_Dockerisation/docker-compose>
-
-
 
 
 要学会看以下的yml文件:
@@ -524,6 +520,25 @@ docker tag myimage:1.0 myrepo/myimage:2.0
 Push an image to a registry
 
 docker push myrepo/myimage:2.0
+
+
+### Container threat model
+- Insecure Host (host上有漏洞）
+- Use an image with a vulnerability （image上做手脚）
+- Expose secrets in image
+- Container escape vulnerabilities（通过黑容器进而黑host）
+- ...(cheatsheet)
+
+### container image 
+- docker official image
+- 用工具扫描（docker scout）,扫描已知的漏洞并提供修改建议
+  ```
+  docker scout quickview jr/web-flask:latest
+  ```
+  修改推荐的basic image 或者 自己建basic image
+- 尽量不要用第三方的image
+
+
 
 ## 3.资料阅读
 
