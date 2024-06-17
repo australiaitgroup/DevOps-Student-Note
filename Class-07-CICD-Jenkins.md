@@ -223,7 +223,7 @@ Definition - Pupeline script from SCM
 Repository - 
 Script Path -  (Jenkinsfile) or (jenkins/Jenkinsfile) or (pipeline/Jenkinsfile)
 
-通过插件或pipeline file内做限制，ignore一些文件的更新不会触发build。
+通过插件或pipeline file内做限制，ignore一些文件的更新，这些文件更新后不会触发build。
 
 # 课后复习
 旧内容不会讲，自行查看学习
