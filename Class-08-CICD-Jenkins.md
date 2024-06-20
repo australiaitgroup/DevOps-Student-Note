@@ -1063,6 +1063,9 @@ npm warn EBADENGINE   required: { node: '<=4.x' },
 npm warn EBADENGINE   current: { node:
 ```
 
+## 构建历史查阅地址
+构建的结果也可以在Jenkins文件中找到，在Jenkins/workspace/userprofile里面，可在里面查找对应的文件名称。
+
 ## Install DotNet SDK 3.1
 
 Open a terminal and run the following commands to setup the 20.04 repositories
@@ -1086,6 +1089,12 @@ Install the .NET Core SDK
 # Multibranch Pipeline
 
 Please fork this repo to your GitHub and create a Blue Ocean pipeline: https://github.com/RayMaAU/building-a-multibranch-pipeline-project/tree/master
+
+使用到blue ocean，从github获得code，但是必须要personal access token（github - setting - 左下角有一个developer settings - Personal access tokens - classic token - generate new token(classic)，填入名字，选上权限（repo，workflow, gist, user）
+
+
+multibranch的pipeline会扫描所有branch，生成branch index，这会扫很长时间。
+
 
 ## Dependency
 
