@@ -1,13 +1,57 @@
-# Class-08-Jenkins-2
+# Class-08-CICD-Jenkins-2
 
-# Topics:
-## 1.Installation on Ubuntu
-## 2.Jenkins Basic Configurations
-## 3.Jenkins Basic Management
-## 4.Hands on a Simple Pipeline
-## 5.Hands-On
-## 6.Solutions
-## 7.Multibranch Pipeline
+- [Class-08-Jenkins-2](#class-08-jenkins-2)
+- [Topics:](#topics-)
+  * [1.Installation on Ubuntu](#1installation-on-ubuntu)
+  * [2.Jenkins Basic Configurations](#2jenkins-basic-configurations)
+  * [3.Jenkins Basic Management](#3jenkins-basic-management)
+  * [4.Hands on a Simple Pipeline](#4hands-on-a-simple-pipeline)
+  * [5.Hands-On](#5hands-on)
+  * [6.Solutions](#6solutions)
+  * [7.Multibranch Pipeline](#7multibranch-pipeline)
+- [1.Installation on Ubuntu](#1installation-on-ubuntu-1)
+  * [Prerequisites](#prerequisites)
+  * [Add apt repository](#add-apt-repository)
+  * [Install Jenkins](#install-jenkins)
+  * [Update the Firewall Configuration](#update-the-firewall-configuration)
+  * [Azure Network Security Group Setting](#azure-network-security-group-setting)
+  * [Jenkins Setup](#jenkins-setup)
+- [2.Jenkins Basic Configurations](#2jenkins-basic-configurations-1)
+  * [Jenkins Home Directory](#jenkins-home-directory)
+  * [# of executors](#--of-executors)
+  * [Jenkins Location](#jenkins-location)
+  * [Global properties -> Environment Variables](#global-properties----environment-variables)
+  * [Email Notification](#email-notification)
+  * [GitHub](#github)
+  * [SMTP Server](#smtp-server)
+  * [Manage Jenkins - Tools](#manage-jenkins---tools)
+  * [Plug-in Management](#plug-in-management)
+  * [Global Tool Configuration](#global-tool-configuration)
+  * [Jenkins-BlueOcean-Pipeline](#jenkins-blueocean-pipeline)
+- [Jenkins Basic Management](#jenkins-basic-management)
+  * [System Jenkins -- Configure Global Security](#system-jenkins----configure-global-security)
+- [Getting started with Jenkinsfile](#getting-started-with-jenkinsfile)
+  * [Jenkins自带账号密码不记得了](#jenkins----------)
+  * [Create your frist pipeline](#create-your-frist-pipeline)
+  * [How to workout my Jenkinsfile?](#how-to-workout-my-jenkinsfile-)
+- [Hands on a Simple Pipeline](#hands-on-a-simple-pipeline)
+  * [Prerequisites](#prerequisites-1)
+  * [Common Programming Languages](#common-programming-languages)
+  * [Create Your Build Pipeline](#create-your-build-pipeline)
+  * [Hands-On](#hands-on)
+  * [Expected Result](#expected-result)
+    + [**poi**](#--poi--)
+    + [**user-java**](#--user-java--)
+    + [**trips**](#--trips--)
+    + [**userprofile**](#--userprofile--)
+- [APIs Jenkins Build Pipeline Solution](#apis-jenkins-build-pipeline-solution)
+  * [1. poi](#1-poi)
+  * [2. user-java](#2-user-java)
+  * [3.trips](#3trips)
+  * [4. userprofile](#4-userprofile)
+  * [构建历史查阅地址](#--------)
+  * [Install DotNet SDK 3.1](#install-dotnet-sdk-31)
+- [Multibranch Pipeline](#multibranch-pipeline)
 
 #  1.Installation on Ubuntu
 
