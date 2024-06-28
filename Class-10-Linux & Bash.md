@@ -292,9 +292,8 @@ The trap command is used to catch the ERR signal (which indicates an error) and 
 - The while loop executes a block of code as long as a specified condition is true. In this example, the loop continues as long as the value of the $counter variable is less than or equal to 5. Inside the loop, it prints out each iteration and increments the counter variable.
 
 # Homework
- Add regex validator for pull request merge / squash to make sure the pull
+- Add regex validator for pull request merge / squash to make sure the pull
 request tittle is start with the jiangren jira issue format “jiangren-1234”
-- Play the game bashcrawl
-- git clone https://gitlab.com/slackermedia/bashcrawl.git bashcrawl
+- Play the game bashcrawl （ git clone https://gitlab.com/slackermedia/bashcrawl.git bashcrawl）
 - Use at least five diff commands/ways to write “Hello Jiangren” to a txt file
 - **学习和记忆Special Characters很重要**
