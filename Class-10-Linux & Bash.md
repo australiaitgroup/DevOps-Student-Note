@@ -1,7 +1,9 @@
 # Class-10-Linux & Bash
+# Lecturer: Sai Li
+- ANZX
+- Certificate: CKA, CKS, Google Cloud Certified ect.
+- 用日历本记录每天的工作日历，用于记录工作经验和每天工作内容汇报
 
-- [Class-10-Linux & Bash](#class-10-linux---bash)
-- [Lecturer: Sai Li](#lecturer--sai-li)
 - [Introduction](#introduction)
   * [What is Linux](#what-is-linux)
   * [Creation of Linux](#creation-of-linux)
@@ -30,12 +32,6 @@
     + [Bash script error handling](#bash-script-error-handling)
     + [Bash script loop](#bash-script-loop)
 - [Homework](#homework)
-
-
-# Lecturer: Sai Li
-- ANZX
-- Certificate: CKA, CKS, Google Cloud Certified ect.
-- 用日历本记录每天的工作日历，用于记录工作经验和每天工作内容汇报
 
 # Introduction
 
