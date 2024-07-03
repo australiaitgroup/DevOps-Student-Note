@@ -49,7 +49,7 @@ Serverless Pros&Cons
   - Scalability (有warm up time)
   - Productivity
 - Cons
-  - Loss of control (主要原因拒绝选择Cloud)
+  - Loss of control (公司和企业为什么拒绝使用Cloud的主要原因)
   - Security: cloud provider might run several customer’s code on the same server at the same time 
   - Performance Impact 
   - Testing 
