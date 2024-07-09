@@ -3,26 +3,42 @@
 # Lecturer - Sai Li
 
 # 主要知识点
-  - [1.Infrastructure as Code and Tools](#1infrastructure-as-code-and-tools)
-    - [1.1 What is Infrastructure as Code](#11-what-is-infrastructure-as-code)
-    - [1.2 What “Infrastructure”?](#12-what-infrastructure)
-    - [1.3 Infrastructure in AWS](#13-infrastructure-in-aws)
-    - [1.4 The problems IaC can solve](#14-the-problems-iac-can-solve)
-  - [2.Terraform Overview](#2terraform-overview)
-    - [2.1 What is Terraform](#21-what-is-terraform)
-    - [2.2 Terraform CLI](#22-terraform-cli)
-  - [3.Terraform Basic Concepts](#3terraform-basic-concepts)
-    - [3.1 The Language (HCL)](#31-the-language-hcl)
-    - [3.2 Planning & Applying](#32-planning--applying)
-    - [3.3 State](#33-state)
-    - [3.4 Dependency Resolution](#34-dependency-resolution)
-    - [3.5 File Structure](#35-file-structure)
-    - [3.6 Providers](#36-providers)
-    - [3.7 Variables](#37-variables)
-    - [3.8 Output](#38-output)
-  - [4.Terraform Best Practices](#4terraform-Best-Practices)
-  - [4.Terraform Hands-on](#4terraform-hands-on)
-  - [5.Homework](#5homework)
+- [课前](#--)
+- [课堂笔记](#----)
+- [1.Infrastructure as Code and Tools](#1infrastructure-as-code-and-tools)
+  * [1.1 What is Infrastructure as Code](#11-what-is-infrastructure-as-code)
+  * [1.2 What “Infrastructure”?](#12-what--infrastructure--)
+  * [1.3 Infrastructure in AWS](#13-infrastructure-in-aws)
+  * [1.4 The problems IaC can solve](#14-the-problems-iac-can-solve)
+  * [Which tools for which?](#which-tools-for-which-)
+    + [IAC (盖房子时候设置布局和结构，硬装修)](#iac-------------------)
+    + [Configuration Management as code(基于硬装修，部署软装修，是对硬件设置的管理)](#configuration-management-as-code-----------------------)
+- [Terraform Overview](#terraform-overview)
+  * [What is Terraform](#what-is-terraform)
+  * [How Terraform works](#how-terraform-works)
+  * [Terraform CLI](#terraform-cli)
+    + [Tiny Terraform Example](#tiny-terraform-example)
+    + [Terraform version constraints](#terraform-version-constraints)
+- [Terraform Basic Concepts](#terraform-basic-concepts)
+  * [The Language (HCL)](#the-language--hcl-)
+  * [Planning & Applying](#planning---applying)
+  * [State file （.tfstate）](#state-file--tfstate-)
+  * [Dependency Resolution](#dependency-resolution)
+  * [File Structure](#file-structure)
+  * [Providers](#providers)
+  * [Variables](#variables)
+  * [Output](#output)
+- [Terraform best practices](#terraform-best-practices)
+  * [Code Structure and Organization:](#code-structure-and-organization-)
+  * [Coding Practices:](#coding-practices-)
+  * [Testing and Automation:](#testing-and-automation-)
+  * [Collaboration and Security:](#collaboration-and-security-)
+- [Terraform Hands-on](#terraform-hands-on)
+  * [Statuscode:](#statuscode-)
+  * [format](#format)
+- [Homework](#homework)
+- [Book](#book)
+- [HashiCorpCertified: Terraform Associate](#hashicorpcertified--terraform-associate)
 
 # 课前
  - 熟悉Slack，可设置任务的第二天提醒
@@ -151,7 +167,7 @@ plan和apply可以一直循环. 用terraform管理的资源是希望一直能跑
 
 terraform文件.ts 像是盖房子的蓝图，调用的provider(如: AWS, GCP等)相当于叫的建筑队，施工队，
 
-### State file （.tfstate）
+## State file （.tfstate）
 How does Terraform track what resources it creates.
 
 跟踪资源，映射关系，优化性能，如同监理角色。
@@ -287,7 +303,7 @@ terraform fmt exmaple.tf
 ```
 **在发布新版本的时候要考虑回滚的plan**
 
-# 5.Homework
+# Homework
 > https://github.com/australiaitgroup/DevOpsNotes/blob/main/WK6_Terraform/hands_on/4%20-%20Homework.md
 
 # Book
