@@ -4,6 +4,7 @@
 # 忽略临时文件
 *.tmp
 
-# 忽略操作系统生成的文件
+# Ignore OS-generated files
 .DS_Store
 Thumbs.db
+image/.DS_Store
