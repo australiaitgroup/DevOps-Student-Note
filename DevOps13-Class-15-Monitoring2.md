@@ -1,7 +1,29 @@
 # Class-15-Monitoring2
+# Lecturer: Kewei Zhang
 
-
-
+- [Class-15-Monitoring2](#class-15-monitoring2)
+- [Monitoring L01 Recap](#monitoring-l01-recap)
+- [Monitoring L02](#monitoring-l02)
+- [Tracing(追踪)](#tracing----)
+  * [Tracing 的作用](#tracing----)
+    + [性能监控和瓶颈分析](#---------)
+    + [故障排查和错误诊断](#---------)
+    + [**依赖关系分析**](#----------)
+    + [请求流分析](#-----)
+    + [用户体验优化(代码优化)](#------------)
+  * [例子](#--)
+- [Dashboard 仪表盘](#dashboard----)
+  * [Dashboard的不同类型](#dashboard-----)
+    + [业务指标 Error Budget](#-----error-budget)
+- [Hands on 1](#hands-on-1)
+- [Hands on 2](#hands-on-2)
+  * [负载测试 Load Testing](#-----load-testing)
+    + [负载测试的关键因素](#---------)
+    + [负载测试的应用场景](#---------)
+- [Hands on 3](#hands-on-3)
+- [Trouble shooting 策略](#trouble-shooting---)
+- [Interview Questions - Monitoring的面试量不大，一般是有一，两道题](#interview-questions---monitoring----------------)
+- [Homework](#homework)
 
 
 # Monitoring L01 Recap
@@ -15,6 +37,7 @@
 - 了解如何用 StatsD 收集和整合指标数据
 - 了解四种 prometheus的指标数据类型-counter,gauge,histogram,summary熟悉如何使用PromQL回答基本的问题-比如吞吐量throughput，延迟latency，和分位数Quantile
 - SRE Golden Signals 概念与原理。
+
 # Monitoring L02
 
 - Tracing 追踪
@@ -23,8 +46,6 @@
 - Load Testing 负载测试
 - Setup locust traffic generator-Hands-on
 - 面试题模拟
-
-
 
 # Tracing(追踪)
 
@@ -41,7 +62,6 @@ Tracing 对于微服务和分布式服务系统的记录和分析尤为重要。
 为什么有效？有Trace ID，ID有context，可通过关系找到具体问题。
 
 ## Tracing 的作用
-
 ### 性能监控和瓶颈分析
 通过追踪一个请求在系统中的传播路径，可以识别出响应时间长的服务或操作，从而定位性能瓶颈。
 
