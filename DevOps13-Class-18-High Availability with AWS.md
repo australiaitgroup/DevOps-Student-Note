@@ -1,9 +1,36 @@
 # Class-18-High Availability with AWS
 # Lecturer: Liji Yu
 
-
-
-
+# Agenda
+- [课前复习](#----)
+- [How should we set SLI](#how-should-we-set-sli)
+- [How should we set SLO](#how-should-we-set-slo)
+- [Document and communicate (SLO)](#document-and-communicate--slo-)
+- [How should we set SLA](#how-should-we-set-sla)
+- [A 5-step HA checklist](#a-5-step-ha-checklist)
+  * [1. Availability metrics](#1-availability-metrics)
+  * [2. Plan HA architecture](#2-plan-ha-architecture)
+    + [Basic Elements of HA](#basic-elements-of-ha)
+    + [Frontend HA components](#frontend-ha-components)
+    + [Backend HA components](#backend-ha-components)
+    + [How do we achieve the nines](#how-do-we-achieve-the-nines)
+  * [3. Perform End to End Test](#3-perform-end-to-end-test)
+  * [4. Deploy Applications Consistently](#4-deploy-applications-consistently)
+  * [5. Monitor Application Health](#5-monitor-application-health)
+- [Chaos Engineering](#chaos-engineering)
+- [AWS High Availability & Auto Scaling](#aws-high-availability---auto-scaling)
+  * [AWS High Availability](#aws-high-availability)
+    + [AWS High Availability for EC2](#aws-high-availability-for-ec2)
+    + [AWS High Availability for RDS](#aws-high-availability-for-rds)
+    + [AWS High Availability for Storage](#aws-high-availability-for-storage)
+    + [Amazon EFS（Elastic File System）](#amazon-efs-elastic-file-system-)
+    + [Amazon EBS（Elastic Block Storage）](#amazon-ebs-elastic-block-storage-)
+- [Hands - on](#hands---on)
+- [Appendix](#appendix)
+  * [Creating a Three-Tier Architecture in AWS](#creating-a-three-tier-architecture-in-aws)
+    + [Introduction](#introduction)
+  * [What we got from it?](#what-we-got-from-it-)
+  * [Other References](#other-references)
 
 # 课前复习
 - How to set SLI, SLO, SLA
